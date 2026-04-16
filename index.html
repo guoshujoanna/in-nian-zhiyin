@@ -17,8 +17,7 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
 .screen{width:100%;max-width:480px;display:flex;flex-direction:column;align-items:center;text-align:center;animation:fadein 1.2s ease both;}
 @keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .eyebrow{font-family:sans-serif;font-size:11px;letter-spacing:3px;color:var(--veil);margin-bottom:2.5rem;text-transform:uppercase;}
-.question{font-size:24px;color:var(--ink);line-height:1.7;margin-bottom:2rem;font-weight:400;letter-spacing:0.02em;}
-.sub{font-family:sans-serif;font-size:13px;color:var(--mist);margin-bottom:2rem;line-height:1.8;}
+.question{font-size:24px;color:var(--ink);line-height:1.7;margin-bottom:2.5rem;font-weight:400;letter-spacing:0.02em;}
 #thought-input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);padding:14px 0;font-size:17px;font-family:'Georgia',serif;color:var(--ink);outline:none;text-align:center;letter-spacing:0.05em;transition:border-color 0.4s;}
 #thought-input::placeholder{color:var(--veil);font-style:italic;}
 #thought-input:focus{border-color:var(--gold);}
@@ -26,6 +25,7 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
 .btn-main:hover{background:var(--ink);color:var(--paper);}
 .btn-ghost{margin-top:1.2rem;background:transparent;border:none;padding:8px 20px;font-size:12px;font-family:sans-serif;letter-spacing:1.5px;color:var(--veil);cursor:pointer;transition:color 0.3s;}
 .btn-ghost:hover{color:var(--ink);}
+
 .deity-symbol{width:68px;height:68px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:pulse-ring 3s ease-in-out infinite;}
 @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(184,151,90,0.15)}50%{box-shadow:0 0 0 14px rgba(184,151,90,0)}}
 .deity-name-zh{font-size:27px;color:var(--ink);letter-spacing:0.15em;margin-bottom:0.5rem;font-weight:400;}
@@ -36,27 +36,46 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
 .chant-guide p{font-family:sans-serif;font-size:12.5px;color:var(--mist);line-height:2;letter-spacing:0.03em;}
 .chant-guide .chant-text{font-size:14px;color:var(--ink);font-family:'Georgia',serif;}
 .chant-soft{font-family:sans-serif;font-size:11px;color:var(--veil);letter-spacing:1px;margin-bottom:2rem;}
+
 .meditate-wrap{background:#14120e;min-height:100vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;position:relative;overflow:hidden;}
 .orb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(184,151,90,0.12) 0%,transparent 70%);animation:orb-breathe 5s ease-in-out infinite;pointer-events:none;}
 @keyframes orb-breathe{0%,100%{width:200px;height:200px;opacity:0.4}50%{width:380px;height:380px;opacity:0.7}}
-.med-name{font-size:30px;color:#e8d9b8;letter-spacing:0.2em;text-align:center;animation:breathe-text 5s ease-in-out infinite;position:relative;z-index:2;font-weight:400;line-height:1.7;}
-@keyframes breathe-text{0%,100%{opacity:0.6;transform:scale(0.97)}50%{opacity:1;transform:scale(1.03)}}
-.med-hint{font-family:sans-serif;font-size:11px;color:rgba(232,217,184,0.4);letter-spacing:3px;margin-top:1.5rem;position:relative;z-index:2;animation:breathe-text 5s ease-in-out infinite;}
-.med-breath{font-family:sans-serif;font-size:12px;color:rgba(232,217,184,0.5);margin-top:2rem;line-height:2.8;position:relative;z-index:2;text-align:center;}
-.counter-row{display:flex;gap:10px;margin-top:2.5rem;position:relative;z-index:2;flex-wrap:wrap;justify-content:center;}
+.med-name{font-size:30px;color:#e8d9b8;letter-spacing:0.2em;text-align:center;position:relative;z-index:2;font-weight:400;line-height:1.7;}
+.med-hint{font-family:sans-serif;font-size:11px;color:rgba(232,217,184,0.4);letter-spacing:3px;margin-top:1.5rem;position:relative;z-index:2;}
+.med-phase{font-family:sans-serif;font-size:13px;color:rgba(232,217,184,0.6);margin-top:2rem;line-height:2;position:relative;z-index:2;text-align:center;letter-spacing:1px;min-height:48px;transition:opacity 0.6s;}
+.counter-row{display:flex;gap:10px;margin-top:2rem;position:relative;z-index:2;flex-wrap:wrap;justify-content:center;}
 .dot{width:7px;height:7px;border-radius:50%;background:rgba(232,217,184,0.2);transition:background 0.4s;}
 .dot.active{background:rgba(184,151,90,0.9);}
-.med-exit{font-family:sans-serif;font-size:12px;letter-spacing:2px;color:rgba(232,217,184,0.3);cursor:pointer;margin-top:3rem;position:relative;z-index:2;background:transparent;border:none;transition:color 0.3s;}
-.med-exit:hover{color:rgba(232,217,184,0.7);}
+.med-exit{font-family:sans-serif;font-size:12px;letter-spacing:2.5px;color:rgba(232,217,184,0.5);cursor:pointer;margin-top:3.5rem;position:relative;z-index:2;background:transparent;border:1px solid rgba(232,217,184,0.25);padding:10px 28px;transition:all 0.4s;}
+.med-exit:hover{color:rgba(232,217,184,0.9);border-color:rgba(232,217,184,0.5);}
+
+/* 选择界面 */
+.choice-wrap{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;}
+.choice-q{font-size:20px;color:var(--ink);letter-spacing:0.08em;line-height:1.8;margin-bottom:3rem;font-weight:400;}
+.choice-row{display:flex;gap:2rem;justify-content:center;}
+.choice-btn{background:transparent;border:1px solid var(--line);padding:13px 36px;font-size:13px;font-family:sans-serif;letter-spacing:2px;color:var(--mist);cursor:pointer;transition:all 0.4s;border-radius:0;}
+.choice-btn:hover{border-color:var(--gold);color:var(--ink);}
+.choice-btn.release:hover{border-color:var(--veil);}
+.choice-btn.keep:hover{border-color:var(--gold);color:var(--gold);}
+
+/* 放下界面 */
 .dissolve-wrap{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.dissolve-text{font-size:19px;color:var(--ink);letter-spacing:0.1em;transition:all 2s ease;margin-bottom:2rem;}
-.dissolve-text.gone{opacity:0;filter:blur(10px);transform:scale(1.1);}
-.release-word{font-size:13px;font-family:sans-serif;letter-spacing:3px;color:var(--gold);margin-bottom:3rem;}
+.release-word{font-size:12px;font-family:sans-serif;letter-spacing:4px;color:var(--veil);margin-bottom:2.5rem;}
+.dissolve-text{font-size:20px;color:var(--ink);letter-spacing:0.1em;transition:all 2.2s ease;margin-bottom:2rem;}
+.dissolve-text.gone{opacity:0;filter:blur(12px);transform:scale(1.12);}
 .particles{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:220px;margin:1rem auto;}
-.particle{width:3px;height:3px;background:var(--gold);border-radius:50%;transition:all 1.8s ease;opacity:0.6;}
+.particle{width:3px;height:3px;background:var(--gold);border-radius:50%;transition:all 2s ease;opacity:0.5;}
 .particle.scatter{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0);}
-.end-msg{font-size:16px;color:var(--mist);line-height:2.2;opacity:0;transition:opacity 1.5s 2s;margin-top:1rem;}
+.end-msg{font-size:15px;color:var(--mist);line-height:2.4;opacity:0;transition:opacity 1.5s 2.2s;margin-top:1rem;}
 .end-msg.show{opacity:1;}
+
+/* 留住界面 */
+.keep-wrap{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.keep-word{font-size:12px;font-family:sans-serif;letter-spacing:4px;color:var(--veil);margin-bottom:2.5rem;}
+.keep-text{font-size:20px;color:var(--ink);letter-spacing:0.1em;animation:keep-glow 4s ease-in-out infinite;margin-bottom:2rem;}
+@keyframes keep-glow{0%,100%{opacity:0.7;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+.keep-msg{font-size:15px;color:var(--mist);line-height:2.4;opacity:0;transition:opacity 1.5s 0.5s;margin-top:1rem;}
+.keep-msg.show{opacity:1;}
 </style>
 </head>
 <body>
@@ -65,14 +84,15 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
   <div class="ripple" style="animation-delay:1.4s"></div>
   <div class="ripple" style="animation-delay:2.8s"></div>
 
+  <!-- 输入页 -->
   <div id="screen-input" class="screen">
     <p class="eyebrow">心念指引</p>
     <h1 class="question">此刻，你心中<br>执着什么？</h1>
-    <p class="sub">无需解释，只需如实写下</p>
     <input id="thought-input" type="text" placeholder="轻轻写下你的念头…" maxlength="80">
     <button class="btn-main" onclick="doMap()">寻觅指引</button>
   </div>
 
+  <!-- 结果页 -->
   <div id="screen-result" class="screen" style="display:none">
     <div class="deity-symbol">
       <svg viewBox="0 0 28 28" fill="none" stroke="#b8975a" stroke-width="1" width="28" height="28">
@@ -87,7 +107,7 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
     <div class="divider-gold"></div>
     <p id="result-poem" class="deity-poem"></p>
     <div class="chant-guide">
-      <p>轻声念诵 <strong>9 或 21 遍</strong></p>
+      <p>先静息三次呼吸，再轻声念诵 <strong>9 遍</strong></p>
       <p class="chant-text" id="result-breath"></p>
       <p style="margin-top:8px;font-size:11px;color:var(--veil);font-family:sans-serif;" id="result-mantra"></p>
     </div>
@@ -96,17 +116,30 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
     <button class="btn-ghost" onclick="goBack()">重新表达</button>
   </div>
 
+  <!-- 念诵页 -->
   <div id="screen-meditate" class="screen" style="display:none;padding:0;width:100%;max-width:100%;">
     <div class="meditate-wrap">
       <div class="orb"></div>
       <p class="med-name" id="med-name-display"></p>
       <p class="med-hint">随呼吸，轻轻念诵</p>
-      <div class="med-breath" id="med-breath-guide"></div>
+      <p class="med-phase" id="med-phase-text"></p>
       <div class="counter-row" id="med-dots"></div>
-      <button class="med-exit" onclick="goDissolve()">念诵已毕，放下</button>
+      <button class="med-exit" onclick="goChoice()">念诵已毕，放下</button>
     </div>
   </div>
 
+  <!-- 选择页 -->
+  <div id="screen-choice" class="screen" style="display:none">
+    <div class="choice-wrap">
+      <p class="choice-q">这一念<br>你想如何安放？</p>
+      <div class="choice-row">
+        <button class="choice-btn release" onclick="goDissolve()">放　下</button>
+        <button class="choice-btn keep" onclick="goKeep()">留　住</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 放下页 -->
   <div id="screen-dissolve" class="screen" style="display:none">
     <div class="dissolve-wrap">
       <p class="release-word">任其散去</p>
@@ -114,89 +147,119 @@ body{background:var(--paper);min-height:100vh;display:flex;align-items:center;ju
       <div class="particles" id="particles-wrap"></div>
       <p class="end-msg" id="end-msg">念头已散<br>此刻，只有当下</p>
     </div>
-    <button class="btn-ghost" style="margin-top:2.5rem" onclick="restart()">重新开始</button>
+    <button class="btn-ghost" style="margin-top:2.5rem;opacity:0;transition:opacity 1s 3s;" id="btn-restart-dissolve" onclick="restart()">重新开始</button>
+  </div>
+
+  <!-- 留住页 -->
+  <div id="screen-keep" class="screen" style="display:none">
+    <div class="keep-wrap">
+      <p class="keep-word">让它安住</p>
+      <p class="keep-text" id="keep-original"></p>
+      <p class="keep-msg" id="keep-msg">这一念，被你轻轻接住<br>让它慢慢生长</p>
+    </div>
+    <button class="btn-ghost" style="margin-top:2.5rem;opacity:0;transition:opacity 1s 2s;" id="btn-restart-keep" onclick="restart()">重新开始</button>
   </div>
 </div>
 
 <script>
 const DB = [
   {
+    names:['观世音','观音','观世音菩萨','南无观世音菩萨'],
     keys:['焦虑','害怕','恐惧','不安','慌','担心','紧张','崩溃','喘不过气','压力大','委屈','哭','心疼','难过','情绪','无助','心很乱','烦躁','烦闷','心烦','抑郁','低落','绝望','撑不住','好累','累了','撑不下去','情感','感情','失恋','分手','爱情','孤独','喜欢','暗恋','爱一个人','被抛弃','挽回','姻缘','桃花','单身'],
     cat:'内心不安',name:'南无观世音菩萨',py:'Námo Guānshìyīn Púsà',
     poem:'慈悲之名，闻声而至\n让不安之心，慢慢安住',
     breath:'吸气：南无\n呼气：观世音菩萨',mantra:'Oṃ Maṇi Padme Hūṃ'
   },
   {
+    names:['文殊','文殊菩萨','文殊师利','文殊师利菩萨','南无文殊师利菩萨'],
     keys:['迷茫','迷失','不知道','方向','选择','困惑','想不清楚','纠结','读书','学习','考试','成绩','记忆','专注','论文','智慧','思路','分析','研究','学业','升学','GPA','开窍','思考','理解','脑子','书','课','复习','备考','找不到答案','想明白'],
     cat:'智慧蒙尘',name:'南无文殊师利菩萨',py:'Námo Wénshū Shīlì Púsà',
     poem:'智慧之剑，破除迷雾\n答案，已在你心中等候',
     breath:'吸气：南无文殊\n呼气：师利菩萨',mantra:'Oṃ Arapacana Dhīḥ'
   },
   {
+    names:['药师佛','药师如来','药师琉璃光如来','南无药师琉璃光如来'],
     keys:['生病','痛','身体','健康','病','治疗','难受','失眠','睡不着','头痛','手术','康复','疲惫','虚弱','身心俱疲','肠胃','过敏','慢性病','住院','检查','不舒服','体质','免疫','发烧','受伤','恢复','疼','酸','医院','医生','药'],
     cat:'身心疗愈',name:'南无药师琉璃光如来',py:'Námo Yàoshī Liúlíguāng Rúlái',
     poem:'琉璃之光，照彻苦痛\n身心之病，皆有药方',
     breath:'吸气：南无药师\n呼气：琉璃光如来',mantra:'Oṃ Bhaiṣajye Bhaiṣajye Mahābhaiṣajye Svāhā'
   },
   {
+    names:['绿度母','度母'],
     keys:['事业','工作','升职','职场','竞争','小人','阻碍','卡住','障碍','机会','面试','项目','目标','推进不了','被卡','晋升','跳槽','创业','合作','谈判','deadline','老板','同事关系','团队','汇报','提案','offer','求职','简历','内耗','职场压力','被针对','背后','嫉妒','排挤','官司','诉讼','陷害'],
     cat:'前路受阻',name:'绿度母',py:'Oṃ Tāre Tuttāre Ture Svāhā',
     poem:'速疾救度，障碍消散\n前方之路，自然展开',
     breath:'吸气：嗡 达咧\n呼气：度达咧 度咧 梭哈',mantra:'Oṃ Tāre Tuttāre Ture Svāhā'
   },
   {
+    names:['白度母'],
     keys:['长寿','寿命','老','父母','家人健康','延年','爷爷','奶奶','外公','外婆','岁月','希望他好好的','健在','年纪','老人','祝寿','保佑爸妈','保佑家人','白发','衰老','抗衰'],
     cat:'祈愿长寿',name:'白度母',py:'Oṃ Tāre Tuttāre Ture Mama Ayuḥ Punya Jñāna Puṣṭim Kuru Svāhā',
     poem:'白莲之上，寿光流淌\n愿所爱之人，岁月安然',
     breath:'吸气：嗡 达咧 度达咧\n呼气：度咧 玛玛 阿优 梭哈',mantra:'Oṃ Tāre Tuttāre Ture Mama Ayuḥ Punya Jñāna Puṣṭim Kuru Svāhā'
   },
   {
+    names:['黄财神','财神'],
     keys:['钱','财','穷','经济','债','还不上','买不起','投资','生意','收入','薪资','财运','贫困','负债','亏损','破产','财富','资金','周转','赚钱','存款','贷款','花钱','消费','财务','金钱','银行','利息'],
     cat:'财运受阻',name:'黄财神',py:'Oṃ Jambhala Jalendraye Svāhā',
     poem:'福德之源，流向虔诚\n丰盛，随施予而生',
     breath:'吸气：嗡 赞巴拉\n呼气：扎伦扎耶 梭哈',mantra:'Oṃ Jambhala Jalendraye Svāhā'
   },
   {
-    keys:['死','离开','失去','悲痛','亡故','思念','超度','去世','离世','祭奠','先人','遗憾','走了','离去','追思','祭祀','扫墓','清明','忌日','冥','阴间','往生','亡灵','牌位','烧纸','告别','葬礼'],
+    names:['地藏','地藏王','地藏菩萨','地藏王菩萨','南无地藏王菩萨'],
+    keys:['死','离开','失去','悲痛','亡故','思念','超度','去世','离世','祭奠','先人','遗憾','走了','离去','追思','祭祀','扫墓','清明','忌日','往生','亡灵','牌位','告别','葬礼'],
     cat:'离别之苦',name:'南无地藏王菩萨',py:'Námo Dìzàng Wáng Púsà',
     poem:'幽冥之间，慈光不灭\n所爱之人，安处彼岸',
     breath:'吸气：南无地藏\n呼气：王菩萨',mantra:'Námo Kṣitigarbhāya'
   },
   {
-    keys:['执念','放不下','过去','后悔','罪','忏悔','业障','做错了','愧疚','自责','原谅自己','懊悔','心结','伤害过别人','亏欠','还不清','负罪感','内疚','恨自己','改变','悔恨','旧伤','走不出来','走不出去','困在'],
+    names:['金刚萨埵'],
+    keys:['执念','放不下','过去','后悔','罪','忏悔','业障','做错了','愧疚','自责','原谅自己','懊悔','心结','伤害过别人','亏欠','负罪感','内疚','恨自己','悔恨','旧伤','走不出来','困在'],
     cat:'执念缠绕',name:'金刚萨埵',py:'Oṃ Vajrasattva Hūṃ',
     poem:'金刚之净，无垢无尘\n过去种种，皆可放下',
     breath:'吸气：嗡 班杂萨埵\n呼气：吽',mantra:'Oṃ Vajrasattva Hūṃ'
   },
   {
-    keys:['备孕','怀孕','求子','生孩子','不孕','试管','宝宝','孩子','孕期','生育','母婴','胎儿','流产','早产','想要孩子','还没怀上','小孩','子女','传宗接代'],
+    names:['送子观音'],
+    keys:['备孕','怀孕','求子','生孩子','不孕','试管','宝宝','孩子','孕期','生育','母婴','胎儿','流产','早产','想要孩子','还没怀上','小孩','子女'],
     cat:'求子心愿',name:'南无送子观音',py:'Námo Sòngzǐ Guānyīn',
     poem:'慈母之心，护佑新生\n生命，在慈悲中到来',
     breath:'吸气：南无\n呼气：送子观音',mantra:'Oṃ Maṇi Padme Hūṃ'
   },
   {
-    keys:['外貌','颜值','皮肤','变美','容貌','形象','自信','觉得自己不好看','长相','五官','身材','体重','减肥','变瘦','显老','皱纹','斑','痘','脱发','发量','美丽','气质','魅力'],
+    names:['月光菩萨','南无月光菩萨'],
+    keys:['外貌','颜值','皮肤','变美','容貌','形象','自信','觉得自己不好看','长相','五官','身材','体重','减肥','变瘦','显老','皱纹','斑','痘','脱发','美丽','气质','魅力'],
     cat:'容颜心愿',name:'南无月光菩萨',py:'Námo Yuèguāng Púsà',
     poem:'月华清净，照见本真\n由内而生的光，最是美丽',
     breath:'吸气：南无\n呼气：月光菩萨',mantra:'Námo Candraprabha'
   },
   {
-    keys:['求愿','心愿','愿望','许愿','祈求','实现','梦想','希望','渴望','心中所求','想要','盼望','期待','祈祷','祝愿','达成','成真','美好愿望'],
+    names:['准提菩萨','准提','南无准提菩萨'],
+    keys:['求愿','心愿','愿望','许愿','祈求','实现','梦想','希望','渴望','心中所求','想要','盼望','期待','祈祷','祝愿','达成','成真'],
     cat:'心愿祈求',name:'南无准提菩萨',py:'Námo Zhǔntí Púsà',
     poem:'七俱胝母，满诸愿求\n真心所向，皆有回应',
     breath:'吸气：南无准提\n呼气：菩萨',mantra:'Oṃ Cale Cule Cunde Svāhā'
   },
   {
-    keys:['加持','修行','打坐','冥想','传承','藏传','上师','障碍重重','感觉被卡','感应','开悟','觉醒','业力','轮回','因果','禅','佛法','学佛','皈依','三宝','密法'],
+    names:['莲花生','莲花生大士','莲师'],
+    keys:['加持','修行','打坐','冥想','传承','藏传','上师','感应','开悟','觉醒','业力','轮回','因果','禅','佛法','学佛','皈依','三宝','密法'],
     cat:'修行护持',name:'莲花生大士',py:'Oṃ Āḥ Hūṃ Vajra Guru Padma Siddhi Hūṃ',
     poem:'莲中而生，悲智双运\n障碍之处，即是道场',
     breath:'吸气：嗡 阿吽 班杂格热\n呼气：巴玛 悉地 吽',mantra:'Oṃ Āḥ Hūṃ Vajra Guru Padma Siddhi Hūṃ'
   },
   {
-    keys:['噩梦','恶梦','阴暗','不干净','磁场','负能量','邪','冲撞','犯太岁','运气差','霉运','不顺','流年不利','出行','安全','保平安','护身'],
-    cat:'消灾护身',name:'南无药师琉璃光如来',py:'Námo Yàoshī Liúlíguāng Rúlái',
-    poem:'十二大愿，护持周全\n灾厄消散，平安归来',
-    breath:'吸气：南无药师\n呼气：琉璃光如来',mantra:'Oṃ Bhaiṣajye Bhaiṣajye Mahābhaiṣajye Svāhā'
+    names:['阿弥陀佛','南无阿弥陀佛'],
+    keys:['往生','极乐','净土','念佛','临终','助念','西方'],
+    cat:'念佛往生',name:'南无阿弥陀佛',py:'Námo Āmítuó Fó',
+    poem:'无量光，无量寿\n一声佛号，接引归家',
+    breath:'吸气：南无\n呼气：阿弥陀佛',mantra:'Oṃ Ami Dhewa Hrīḥ'
+  },
+  {
+    names:['释迦牟尼','释迦牟尼佛','南无释迦牟尼佛'],
+    keys:['人生意义','随缘','说不清','什么都不知道','修行'],
+    cat:'本师庇佑',name:'南无释迦牟尼佛',py:'Námo Shìjiāmóuní Fó',
+    poem:'本师在此，从未离去\n安住当下，即是修行',
+    breath:'吸气：南无\n呼气：释迦牟尼佛',mantra:'Oṃ Muni Muni Mahāmuni Śākyamuni Svāhā'
   },
 ];
 
@@ -206,18 +269,22 @@ const DEFAULT = {
   breath:'吸气：南无\n呼气：释迦牟尼佛',mantra:'Oṃ Muni Muni Mahāmuni Śākyamuni Svāhā'
 };
 
-let current=null, thoughtText='', chantCount=0, chantInterval=null;
+let current=null, thoughtText='', chantCount=0, chantInterval=null, breathPhase=0, breathInterval=null;
 
 function mapThought(t) {
-  const s = t.toLowerCase();
+  const s = t.trim();
   for (const d of DB) {
-    if (d.keys.some(k => s.includes(k))) return d;
+    if (d.names && d.names.some(n => s.includes(n))) return d;
+  }
+  const sl = s.toLowerCase();
+  for (const d of DB) {
+    if (d.keys.some(k => sl.includes(k))) return d;
   }
   return DEFAULT;
 }
 
 function show(id) {
-  ['screen-input','screen-result','screen-meditate','screen-dissolve'].forEach(s=>{
+  ['screen-input','screen-result','screen-meditate','screen-choice','screen-dissolve','screen-keep'].forEach(s=>{
     document.getElementById(s).style.display='none';
   });
   const el=document.getElementById(id);
@@ -240,12 +307,11 @@ function doMap() {
   document.getElementById('result-breath').innerHTML=current.breath.replace(/\n/g,'<br>');
   document.getElementById('result-mantra').textContent=current.mantra;
   document.getElementById('med-name-display').textContent=current.name;
-  document.getElementById('med-breath-guide').innerHTML=current.breath.replace(/\n/g,'<br>');
   setTimeout(()=>show('screen-result'),300);
 }
 
 function goMeditate() {
-  chantCount=0;
+  chantCount=0; breathPhase=0;
   const dots=document.getElementById('med-dots');
   dots.innerHTML='';
   for(let i=0;i<9;i++){
@@ -255,44 +321,104 @@ function goMeditate() {
   }
   show('screen-meditate');
   clearInterval(chantInterval);
-  chantInterval=setInterval(()=>{
+  clearInterval(breathInterval);
+
+  const phaseEl = document.getElementById('med-phase-text');
+  const breathPhrases = ['吸气…','屏息…','呼气…','屏息…'];
+  let bIdx = 0;
+
+  function runBreath() {
+    phaseEl.style.opacity='0';
+    setTimeout(()=>{
+      phaseEl.textContent = breathPhrases[bIdx % 4];
+      phaseEl.style.opacity='1';
+      bIdx++;
+      if(bIdx >= 12) {
+        clearInterval(breathInterval);
+        setTimeout(startChant, 800);
+      }
+    },400);
+  }
+
+  phaseEl.textContent='先做三次深呼吸…';
+  phaseEl.style.opacity='1';
+  setTimeout(()=>{
+    breathInterval = setInterval(runBreath, 1800);
+  }, 1200);
+}
+
+function startChant() {
+  const phaseEl = document.getElementById('med-phase-text');
+  phaseEl.style.opacity='0';
+  setTimeout(()=>{
+    phaseEl.textContent='开始念诵';
+    phaseEl.style.opacity='1';
+  },400);
+  chantInterval = setInterval(()=>{
     if(chantCount<9){
       document.getElementById('dot-'+chantCount).classList.add('active');
       chantCount++;
-    } else { clearInterval(chantInterval); }
+      if(chantCount===9){
+        clearInterval(chantInterval);
+        setTimeout(()=>{
+          phaseEl.style.opacity='0';
+          setTimeout(()=>{phaseEl.textContent='念诵圆满';phaseEl.style.opacity='1';},400);
+        },2000);
+      }
+    }
   },5000);
 }
 
-function goDissolve() {
+function goChoice() {
   clearInterval(chantInterval);
+  clearInterval(breathInterval);
+  show('screen-choice');
+}
+
+function goDissolve() {
   show('screen-dissolve');
   document.getElementById('dissolve-original').textContent=thoughtText;
   document.getElementById('dissolve-original').classList.remove('gone');
   document.getElementById('end-msg').classList.remove('show');
+  const btn=document.getElementById('btn-restart-dissolve');
+  btn.style.opacity='0';
   const wrap=document.getElementById('particles-wrap');
   wrap.innerHTML='';
-  for(let i=0;i<20;i++){
+  for(let i=0;i<24;i++){
     const p=document.createElement('div');
     p.className='particle';
-    p.style.setProperty('--tx',(Math.random()-0.5)*140+'px');
-    p.style.setProperty('--ty',(Math.random()-0.5)*90-40+'px');
+    p.style.setProperty('--tx',(Math.random()-0.5)*160+'px');
+    p.style.setProperty('--ty',(Math.random()-0.5)*100-50+'px');
     wrap.appendChild(p);
   }
   setTimeout(()=>{
     document.getElementById('dissolve-original').classList.add('gone');
     document.querySelectorAll('.particle').forEach(p=>p.classList.add('scatter'));
   },800);
-  setTimeout(()=>document.getElementById('end-msg').classList.add('show'),2400);
+  setTimeout(()=>document.getElementById('end-msg').classList.add('show'),2800);
+  setTimeout(()=>btn.style.opacity='1',4000);
+}
+
+function goKeep() {
+  show('screen-keep');
+  document.getElementById('keep-original').textContent=thoughtText;
+  document.getElementById('keep-msg').classList.remove('show');
+  const btn=document.getElementById('btn-restart-keep');
+  btn.style.opacity='0';
+  setTimeout(()=>document.getElementById('keep-msg').classList.add('show'),600);
+  setTimeout(()=>btn.style.opacity='1',3000);
 }
 
 function goBack(){show('screen-input');}
 function restart(){
   document.getElementById('thought-input').value='';
   thoughtText=''; current=null;
+  clearInterval(chantInterval);
+  clearInterval(breathInterval);
   show('screen-input');
 }
 
-document.getElementById('thought-input').addEventListener('keydown', function(e){
+document.getElementById('thought-input').addEventListener('keydown',function(e){
   if(e.key==='Enter') doMap();
 });
 </script>
